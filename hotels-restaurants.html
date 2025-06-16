@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotels & Restaurants - GoDiscover</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Mapbox GL JS CSS -->
+    <!-- MOVED THIS LINK HERE -->
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css' rel='stylesheet' />
+     <!-- Your Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <header>
+        <!-- Header remains the same -->
+        <div class="container">
+            <a href="index.html" class="logo">GoDiscover</a>
+            <nav>
+                 <ul id="nav-list">
+                    <li><a href="itinerary.html">Itinerary Planner</a></li>
+                    <li><a href="hotels-restaurants.html" class="active">Hotels & Restaurants</a></li>
+                    <li><a href="flights.html">Flights</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li class="auth-link logged-out"><a href="login.html" id="login-btn-header">Login</a></li>
+                    <li class="auth-link logged-out"><a href="signup.html" id="signup-btn-header">Sign Up</a></li>
+                    <li class="auth-link logged-in" style="display: none;"><span id="user-greeting" style="padding: 8px 10px; color: var(--text-color-dark); font-weight: 600;"></span></li>
+                    <li class="auth-link logged-in" style="display: none;"><a href="#" id="logout-btn" class="secondary-btn">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hotels-restaurants-search" class="hotels-restaurants-search">
+        <div class="container">
+            <h2 style="color: var(--text-color-dark);">Find Hotels & Restaurants</h2>
+
+            <!-- Search Bar Container -->
+            <div class="search-bar-container">
+                <input type="text" id="location-search" placeholder="Enter a city, area, or address">
+                <button class="btn primary-btn" id="manual-search-btn" aria-label="Search Location"><i class="fas fa-search"></i></button>
+            </div>
+
+            <!-- Nearby Button -->
+            <button class="btn secondary-btn" id="nearby-recommendations-btn" style="display: block; margin: 20px auto 30px auto; max-width: 300px;">
+                <i class="fas fa-location-arrow "></i> Use My Current Location
+            </button>
+
+            <!-- Map Container - Mapbox will render here -->
+            <div id="live-map" class="live-map">
+                <!-- Ensure your style.css gives #live-map a height, e.g., height: 500px; -->
+                <!-- Remove placeholder text or it will be briefly visible -->
+            </div>
+
+            <!-- Search Results Area -->
+            <div id="search-results" class="search-results">
+                 <p>Enter a location or use your current location to find hotels and restaurants.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <!-- Footer remains the same -->
+        <div class="container">
+             <div class="footer-links"> <a href="about.html">About Us</a> <a href="contact.html">Contact</a> </div>
+             <div class="social-links"> <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a> <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a> <a href="#" target="_blank" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a> </div>
+             <p>© 2023 GoDiscover. All rights reserved.</p>
+        </div>
+    </footer>
+
+   <!-- Mapbox GL JS -->
+   <!-- Keep the JS link here or after body close -->
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+<!-- Your Custom JS -->
+<script src="script.js"></script>
+
+</body>
+</html>

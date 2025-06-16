@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Itinerary Planner - GoDiscover</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.9/flatpickr.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">GoDiscover</a>
+            <nav>
+                <ul>
+                    <li><a href="itinerary.html" class="active">Itinerary Planner</a></li>
+                    <li><a href="hotels-restaurants.html">Hotels & Restaurants</a></li>
+                    <li><a href="flights.html">Flights</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li class="auth-link logged-out"><a href="login.html" id="login-btn">Login</a></li> <!-- Need classes -->
+                    <li class="auth-link logged-out"><a href="signup.html" id="signup-btn">Sign Up</a></li> <!-- Need classes -->
+                    <li class="auth-link logged-in" style="display: none;"><span id="user-greeting"></span></li> <!-- Need class and ID -->
+                    <li class="auth-link logged-in" style="display: none;"><a href="#" id="logout-btn">Logout</a></li> <!-- Need class and ID -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="itinerary-planner" class="itinerary-planner">
+        <div class="container">
+            <h2 style="color: var(--text-color-dark);">Plan Your Itinerary</h2>
+            <form id="itineraryForm">
+                <div class="form-group">
+                    <label for="startDate">Start Date:</label>
+                    <input type="text" id="startDate" name="startDate" class="datepicker" placeholder="Select Start Date" readonly required>
+                </div>
+                <div class="form-group">
+                    <label for="endDate">End Date:</label>
+                    <input type="text" id="endDate" name="endDate" class="datepicker" placeholder="Select End Date" readonly required>
+                </div>
+                <div class="form-group guests-group">
+                    <label for="guests">Number of Guests:</label>
+                    <div class="guest-counter">
+                        <button type="button" class="guest-btn minus-btn" aria-label="Decrease guests">-</button>
+                        <input type="number" id="guests" name="guests" value="1" min="1" readonly>
+                        <button type="button" class="guest-btn plus-btn" aria-label="Increase guests">+</button>
+                    </div>
+                </div>
+                <!-- **** START: Added Destination Field **** -->
+                <div class="form-group">
+                    <label for="destination">Destination (Optional):</label>
+                    <input type="text" id="destination" name="destination" placeholder="Enter specific city or region (e.g., Goa, Kerala, Rajasthan)">
+                </div>
+                <!-- **** END: Added Destination Field **** -->
+                <div class="form-group">
+                    <label for="interests">Interests (e.g., Mountains, Beaches, History, Food):</label>
+                    <input type="text" id="interests" name="interests" placeholder="Enter your interests (comma-separated)">
+                </div>
+                <div class="form-group">
+                    <label for="travelStyle">Travel Style:</label>
+                    <select id="travelStyle" name="travelStyle">
+                        <option value="">Select Travel Style</option>
+                        <option value="budget">Budget</option>
+                        <option value="mid-range">Mid-Range</option> <!-- Changed from medium -->
+                        <option value="luxury">Luxury</option>
+                        <option value="adventure">Adventure</option>
+                        <option value="family">Family-Friendly</option>
+                        <option value="romantic">Romantic</option>
+                        <option value="relaxation">Relaxation</option>
+                        <option value="cultural">Cultural Immersion</option>
+                        <option value="fast-paced">Fast-Paced</option> <!-- Added style -->
+                        <option value="slow-travel">Slow Travel</option> <!-- Added style -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="budgetRange">Budget Range (INR per person, approx total trip):</label>
+                    <select id="budgetRange" name="budgetRange">
+                        <option value="">Select Budget Range</option>
+                        <option value="low">Below ₹15,000</option>
+                        <option value="medium">₹15,000 - ₹40,000</option>
+                        <option value="high">₹40,000 - ₹75,000</option>
+                        <option value="very-high">Above ₹75,000</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn primary-btn">Generate Itinerary</button>
+            </form>
+            <div id="itineraryResult" class="itinerary-result">
+                <!-- Itinerary results will appear here -->
+                <!-- Remove any placeholder text like "Itinerary results will appear here" -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <!-- Footer content same as index.html -->
+        <div class="container">
+            <div class="footer-links">
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="social-links">
+                <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+            </div>
+            <p>© 2023 GoDiscover. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.9/flatpickr.min.js"></script>
+    <script>
+        // Initialize Flatpickr date pickers
+        flatpickr(".datepicker", {
+            minDate: "today",
+            dateFormat: "Y-m-d", // Standard format
+            // Additional options if needed
+        });
+    </script>
+</body>
+</html>

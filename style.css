@@ -1,0 +1,1073 @@
+/*  ---  Vibrant & Out-of-the-Box GoDiscover Styling  --- */
+
+/* --- Color Palette (Neon Accents & Harmony) --- */
+:root {
+    --primary-color: #34D399;       /* Electric Green/Teal - Neon Accent */
+    --secondary-color: #F472B6;     /* Hot Pink - Neon Accent */
+    --accent-color: #FDE047;        /* Bright Yellow - Neon Accent */
+    --base-dark: #1E1B2A;           /* Deep Indigo/Charcoal - Dark Base */
+    --base-light: #F8FAFC;          /* Very Light Gray - Light Base */
+    --text-color-light: #EEE;        /* Light text for dark backgrounds */
+    --text-color-dark: #333;         /* Dark text for light backgrounds */
+    --gradient-primary: linear-gradient(45deg, var(--primary-color), var(--secondary-color)); /* Example Gradient */
+}
+
+/* --- Basic Reset and Global Styles (Modified) --- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
+
+body {
+    font-family: 'Nunito Sans', sans-serif; /* Modern, slightly rounded font */
+    line-height: 1.7;
+    color: var(--text-color-dark);
+    background-color: var(--base-light); /* Light base background */
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased; /* Enhance font rendering */
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- Header (Modern & Striking) --- */
+header {
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white header */
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 2.2em;
+    font-weight: 900; /* Extra bold logo */
+    color: var(--base-dark);
+    text-decoration: none;
+    letter-spacing: -1px; /* Slightly closer letter spacing for logo */
+    transition: color 0.3s ease;
+}
+
+.logo:hover {
+    color: var(--primary-color); /* Neon hover effect on logo */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav li {
+    margin-left: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color-dark);
+    font-weight: 600;
+    position: relative; /* For underline animation */
+    padding-bottom: 5px; /* Spacing for underline */
+    transition: color 0.3s ease;
+}
+
+nav a::after { /* Underline animation */
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+nav a:hover, nav a.active {
+    color: var(--primary-color);
+}
+
+nav a:hover::after, nav a.active::after {
+    width: 100%;
+}
+
+
+/* --- Hero Section (Dynamic & Stunning) --- */
+.hero {
+    background-image: var(--gradient-primary), url('images/hero-india-vibrant.jpg'); /* Gradient overlay + Image */
+    background-blend-mode: multiply; /* Blend gradient with image */
+    background-size: cover;
+    background-position: center;
+    color: var(--text-color-light);
+    text-align: center;
+    padding: 180px 0; /* Increased padding for more dramatic hero */
+    position: relative; /* For parallax effect */
+    overflow: hidden; /* Clip overflow for animations */
+}
+
+.hero::before { /* Parallax background effect */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/hero-india-vibrant-bg.jpg'); /* Background image for parallax */
+    background-size: cover;
+    background-position: center bottom;
+    z-index: -1; /* Behind hero content */
+    transform: scale(1.1); /* Slightly zoomed in for parallax effect */
+    filter: brightness(0.7) saturate(1.2); /* Darken and saturate background */
+}
+
+.hero-content {
+    max-width: 950px;
+    margin: 0 auto;
+    position: relative; /* Needed for z-index if adding content animations */
+}
+
+.hero h1 {
+    font-size: 4em;
+    margin-bottom: 25px;
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Text shadow for depth */
+    animation: fadeInUp 1.2s ease-out 0.3s backwards; /* Example animation */
+}
+
+.hero p {
+    font-size: 1.3em;
+    margin-bottom: 40px;
+    color: var(--text-color-light);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1.2s ease-out 0.5s backwards; /* Example animation */
+}
+
+/* --- Features Section (Playful & Eye-Catching) --- */
+.features {
+    padding: 100px 0;
+    background-color: var(--base-dark); /* Dark background for features */
+    color: var(--text-color-light);
+    position: relative; /* For background shapes */
+    overflow: hidden; /* Clip background shapes */
+}
+
+.features::before, .features::after { /* Geometric background shapes */
+    content: '';
+    position: absolute;
+    background-color: rgba(var(--primary-color-rgb), 0.1); /* Semi-transparent neon */
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.7;
+}
+
+.features::before {
+    width: 400px;
+    height: 400px;
+    top: -100px;
+    left: -150px;
+}
+
+.features::after {
+    width: 500px;
+    height: 500px;
+    bottom: -150px;
+    right: -200px;
+}
+
+
+.features h2, .itinerary-planner h2, .hotels-restaurants-search h2, .flight-search h2, .contact-page h2 {
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 3em;
+    color: var(--text-color-light); /* Light text on dark background */
+    font-weight: 800;
+    letter-spacing: -1px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+}
+
+.feature-card {
+    background-color: rgba(255, 255, 255, 0.05); /* Slightly transparent card background */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly brighter on hover */
+}
+
+.feature-card i {
+    font-size: 3.5em;
+    color: var(--primary-color); /* Neon icon color */
+    margin-bottom: 25px;
+    text-shadow: 0 0 10px var(--primary-color); /* Neon glow effect on icons */
+}
+
+.feature-card h3 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: var(--text-color-light);
+    font-weight: 700;
+}
+
+.feature-card p {
+    color: rgba(255, 255, 255, 0.8); /* Lighter text for card descriptions */
+    line-height: 1.7;
+}
+
+
+/* --- Buttons (Neon & 3D Effect) --- */
+.btn {
+    display: inline-block;
+    padding: 14px 35px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease, color 0.3s ease;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); /* Subtle 3D shadow */
+    position: relative; /* For neon glow effect */
+    overflow: hidden; /* Clip glow */
+}
+
+.btn::before { /* Neon glow behind button */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1; /* Behind button text */
+    filter: blur(15px); /* Glow effect */
+    transform: scale(1.2); /* Slightly larger glow area */
+}
+
+.btn:hover {
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+}
+
+.btn:hover::before {
+    opacity: 0.6; /* Show glow on hover */
+}
+
+
+.primary-btn {
+    background-color: var(--primary-color);
+    color: var(--base-dark);
+}
+
+.primary-btn:hover {
+    background-color: darken(var(--primary-color), 5%); /* Slightly darker primary on hover - SCSS needed for darken function, or use rgba for manual darkening */
+    color: var(--base-dark);
+}
+
+.secondary-btn {
+    background-color: transparent; /* Transparent background for secondary */
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.secondary-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--base-dark);
+    border-color: var(--primary-color); /* Keep border color consistent */
+}
+
+
+/* --- Form Styles (Modern & Clean) --- */
+.itinerary-planner form, .hotels-restaurants-search .search-bar, .flight-search form, .contact-page form {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent form background */
+    backdrop-filter: blur(10px); /* Glassmorphism effect on form */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 30px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 12px;
+    font-weight: 700;
+    color: var(--text-color-dark);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="number"],
+.form-group input[type="password"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    font-size: 1.1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent input background */
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="number"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(var(--primary-color-rgb), 0.2); /* Neon focus effect */
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 180px;
+}
+
+
+/* --- Guest Counter (Stylized) --- */
+.guests-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.guest-counter {
+    display: flex;
+    align-items: center;
+}
+
+.guest-btn {
+    background: none;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3em;
+    cursor: pointer;
+    margin: 0 8px;
+    color: var(--primary-color);
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.guest-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--base-dark);
+    border-color: var(--primary-color);
+}
+
+.guest-counter input[type="number"] {
+    width: 80px;
+    text-align: center;
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: 600;
+    border: none;
+    background-color: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+}
+
+
+/* --- Hotels & Restaurants Map (Placeholder Style) --- */
+.hotels-restaurants-search .live-map {
+    height: 450px;
+    background-color: rgba(0, 0, 0, 0.05); /* Very light gray map placeholder */
+    border-radius: 15px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #999;
+    font-style: italic;
+    border: 2px dashed rgba(0, 0, 0, 0.1); /* Dashed border for placeholder */
+}
+
+
+/* --- Footer (Dark & Minimal) --- */
+footer {
+    background-color: var(--base-dark);
+    color: var(--text-color-light);
+    padding: 40px 0;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.08); /* Subtle top border */
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+footer .footer-links, footer .social-links {
+    margin-bottom: 20px;
+}
+
+footer .footer-links a, footer .social-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    margin: 0 20px;
+    transition: color 0.3s ease;
+    display: inline-block;
+}
+
+footer .footer-links a:hover, footer .social-links a:hover {
+    color: var(--text-color-light);
+}
+
+footer .social-links i {
+    font-size: 1.3em;
+}
+
+footer p {
+    font-size: 0.95em;
+    margin-top: 15px;
+    width: 100%;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6); /* Even lighter copyright text */
+}
+
+
+/* --- Animations (Basic Fade-In) --- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero h1, .hero p, .feature-card {
+     /* opacity: 0; Initially hidden for animation */
+    animation-fill-mode: backwards; /* Keep initial state before animation starts */
+}
+
+.hero h1 { animation-delay: 0.2s; }
+.hero p  { animation-delay: 0.4s; }
+.feature-card { animation: fadeInUp 1s ease-out 0.4s backwards; }
+.feature-card:nth-child(2) { animation-delay: 0.6s; }
+.feature-card:nth-child(3) { animation-delay: 0.8s; }
+
+
+/* --- Responsive Design (Enhanced for Vibrant UI) --- */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    nav li {
+        margin-left: 0;
+        margin-bottom: 15px;
+    }
+
+    .hero {
+        padding: 150px 0;
+    }
+
+    .hero h1 {
+        font-size: 3em;
+    }
+
+    .hero p {
+        font-size: 1.2em;
+    }
+
+    .features, .itinerary-planner, .hotels-restaurants-search, .flight-search, .contact-page {
+        padding: 80px 0;
+    }
+
+    .features h2, .itinerary-planner h2, .hotels-restaurants-search h2, .flight-search h2, .contact-page h2 {
+        font-size: 2.5em;
+        margin-bottom: 40px;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr; /* Stack features on smaller screens */
+    }
+
+    .feature-card {
+        padding: 30px;
+    }
+
+    .itinerary-planner form, .hotels-restaurants-search .search-bar, .flight-search form, .contact-page form {
+        padding: 30px;
+    }
+
+    footer .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer .footer-links, footer .social-links {
+        margin-bottom: 20px;
+    }
+
+    nav a::after { /* Remove underline on mobile for cleaner look if needed */
+        display: none;
+    }
+}
+
+/* --- Authentication UI Styles --- */
+
+/* Hide elements meant for logged-in users by default */
+.auth-link.logged-in {
+    display: none; /* Initially hidden */
+}
+/* Hide elements meant for logged-out users by default */
+.auth-link.logged-out {
+    display: list-item; /* Initially shown (adjust if using flex display on li) */
+}
+
+/* When the body has the 'user-is-logged-in' class */
+body.user-is-logged-in .auth-link.logged-in {
+    display: list-item; /* Show logged-in elements */
+}
+body.user-is-logged-in .auth-link.logged-out {
+    display: none; /* Hide logged-out elements */
+}
+
+/* Style for the user greeting */
+#user-greeting {
+    /* padding: 8px 10px; */ /* Already added inline, but can be here */
+    /* color: var(--text-color-dark); */
+    /* font-weight: 600; */
+    font-size: 0.9em;
+    margin-right: 10px; /* Space before logout button */
+}
+
+/* Style for auth pages */
+.auth-page form {
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 35px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.auth-page h2 {
+    color: var(--text-color-dark);
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.auth-page .form-message {
+    margin-bottom: 20px; /* Add space below message */
+    display: block; /* Ensure it takes space even when empty initially */
+    min-height: 1em; /* Prevent layout shift */
+    /* Inherit success/error styles from previous additions */
+}
+/* Ensure message div is visible when it has content */
+.auth-page .form-message:not(:empty) {
+    display: block !important; /* Override inline style if needed */
+}
+
+
+.auth-page button[type="submit"] {
+    width: 100%;
+    margin-top: 10px; /* Space above button */
+}
+
+.auth-page p {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 0.95em;
+}
+.auth-page p a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+.auth-page p a:hover {
+    text-decoration: underline;
+}
+
+/* Adjust header button styling if needed */
+#logout-btn {
+    padding: 8px 18px; /* Match other auth buttons */
+    font-size: 0.9em;
+    /* Inherits .secondary-btn styles */
+}
+/* Add these styles or modify existing ones in style.css */
+
+/* --- Hotels & Restaurants Search Bar --- */
+.search-bar-container {
+    max-width: 700px;
+    margin: 0 auto 0 auto; /* Remove bottom margin initially */
+    display: flex;
+    background-color: #fff;
+    border-radius: 25px; /* More rounded for search bar look */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 5px 5px 5px 20px; /* Padding left for text, less for button */
+    border: 1px solid #eee;
+    overflow: hidden; /* Ensure button fits */
+}
+
+.search-bar-container input[type="text"] {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    padding: 10px 5px; /* Vertical padding */
+    font-size: 1.05em;
+    background: transparent; /* Inherit background */
+    box-shadow: none; /* Remove focus shadow */
+}
+/* Remove focus ring from input when container is focused (optional) */
+.search-bar-container:focus-within input[type="text"] {
+     box-shadow: none;
+}
+
+
+.search-bar-container button#manual-search-btn {
+    flex-shrink: 0;
+    border-radius: 20px; /* Match container rounding */
+    padding: 10px 18px; /* Adjust padding */
+    margin-left: 5px; /* Small space before button */
+    font-size: 1em;
+    /* Ensure primary button styles apply */
+}
+.search-bar-container button#manual-search-btn i {
+    font-size: 1.1em; /* Adjust icon size */
+}
+
+/* Spacing for the Nearby button - applied via inline style now, but can be here */
+/* #nearby-recommendations-btn {
+    display: block;
+    margin: 20px auto 30px auto;
+    max-width: 300px;
+} */
+
+/* --- Hotels & Restaurants Results --- */
+.search-results {
+    margin-top: 30px; /* Ensure space below map/button */
+    /* Keep existing styles for background, padding, etc. */
+}
+
+.search-results h3 { /* Heading for results */
+    font-size: 1.5em;
+    color: var(--base-dark);
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.search-results ul#places-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.search-results li.place-item {
+    padding: 15px 10px;
+    border-bottom: 1px solid #eee;
+    display: flex; /* Allow for icon + text */
+    align-items: center;
+    gap: 15px; /* Space between icon and text */
+}
+.search-results li.place-item:last-child {
+    border-bottom: none;
+}
+
+.search-results li.place-item i.place-icon {
+    font-size: 1.4em;
+    color: var(--primary-color);
+    width: 25px; /* Fixed width for alignment */
+    text-align: center;
+}
+
+.search-results li.place-item .place-details {
+    flex-grow: 1;
+}
+
+.search-results li.place-item .place-name {
+    font-weight: 600;
+    font-size: 1.1em;
+    color: var(--text-color-dark);
+    margin-bottom: 3px;
+}
+
+.search-results li.place-item .place-type {
+    font-size: 0.9em;
+    color: #666;
+    text-transform: capitalize;
+}
+
+/* Ensure loading/error messages inside results div are centered */
+.search-results p {
+    text-align: center;
+    padding: 20px;
+    color: #555;
+}
+.search-results p i.fa-spinner {
+     margin-left: 8px;
+}
+/* --- Hotels & Restaurants Map Placeholder --- */
+.hotels-restaurants-search .live-map {
+    height: 450px; /* Ensure height is set */
+    width: 100%; /* Ensure it takes full width */
+    background-color: #f0f0f0; /* Background shown while loading */
+    border-radius: 12px;
+    margin-bottom: 30px;
+    border: 1px solid #ddd;
+    /* Remove text alignment/display flex if they were for placeholder text */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* color: #999; */
+    /* font-style: italic; */
+    position: relative; /* Needed for map controls */
+    overflow: hidden; /* Hide parts of map extending beyond border radius */
+}
+
+/* Optional: Style Mapbox Popups */
+.mapboxgl-popup {
+  max-width: 250px;
+  font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+
+.mapboxgl-popup-content {
+  padding: 10px 15px;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.mapboxgl-popup-content h4 {
+  margin: 0 0 5px 0;
+  font-size: 1.1em;
+  font-weight: 600;
+  color: var(--base-dark);
+}
+
+.mapboxgl-popup-content p {
+  margin: 0;
+  font-size: 0.95em;
+  color: #555;
+}
+
+/*flightcss*/
+.flights-table {
+    width: 100%; /* Make table take full width */
+    border-collapse: collapse; /* Remove gaps between cells */
+    margin-top: 15px; /* Add some space above the table */
+    font-size: 0.9em; /* Slightly smaller font */
+}
+
+.flights-table th,
+.flights-table td {
+    border: 1px solid #ddd; /* Add borders to cells */
+    padding: 8px 10px; /* Add padding inside cells */
+    text-align: left; /* Align text to the left */
+    vertical-align: top; /* Align content to the top */
+}
+
+.flights-table th {
+    background-color: #f2f2f2; /* Light grey background for headers */
+    font-weight: bold; /* Make headers bold */
+}
+
+.flights-table tr:nth-child(even) {
+    background-color: #f9f9f9; /* Zebra striping for rows */
+}
+
+.flights-table tr:hover {
+    background-color: #e6f7ff; /* Highlight row on hover */
+}
+
+/* Styling for pagination info */
+.pagination-info {
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+/* .itinerary-result {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f8f9fa; 
+    border-radius: 8px;
+    border: 2px solid #94adc7;
+} */
+
+.itinerary-result {
+    margin-top: 30px;
+    padding: 30px 35px; /* Adjust padding */
+    background: linear-gradient(to bottom right, #ffffff, #f7f9fc); /* Lighter gradient */
+    border-radius: 10px;
+    position: relative; /* Needed for pseudo-element */
+    overflow: hidden;   /* Important for border-radius + pseudo-elements */
+    box-shadow:
+        0 8px 16px rgba(148, 173, 199, 0.15), /* Softer, slightly colored shadow */
+        0 2px 4px rgba(148, 173, 199, 0.1),
+        inset 0 1px 2px rgba(255, 255, 255, 0.5); /* Subtle inner highlight */
+    /* Remove border */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transform transition */
+}
+
+.itinerary-result:hover {
+    transform: translateY(-3px); /* Slight lift on hover */
+     box-shadow:
+        0 12px 24px rgba(148, 173, 199, 0.2),
+        0 4px 8px rgba(148, 173, 199, 0.15),
+        inset 0 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+/* Decorative top element */
+.itinerary-result::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px; /* Height of the decorative border */
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color)); /* Use theme colors */
+    /* Could also use the user's border color: background: #94adc7; */
+}
+
+.itinerary-result h3 { /* Style for the "Generated Itinerary" heading */
+    text-align: center;
+    color: linear-gradient(90deg, var(--primary-color), var(--secondary-color));  /* Use your primary color */
+    margin-bottom: 25px;
+    font-size: 1.8em;
+}
+
+.itinerary-day-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden; /* Ensures border radius is applied to children */
+}
+
+.day-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); /* Gradient header */
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.day-header .day-number {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.day-header .day-date {
+    font-size: 0.9em;
+    opacity: 0.9;
+}
+
+.day-title {
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-top: 5px;
+    text-align: center; /* Center the day title if present */
+}
+
+
+.activities-list {
+    padding: 0; /* Remove default list padding */
+    margin: 0;
+}
+
+.activity-item {
+    display: flex;
+    align-items: flex-start; /* Align items to the top */
+    padding: 15px 20px;
+    border-bottom: 1px solid #f0f0f0; /* Lighter separator */
+    gap: 15px; /* Space between icon and details */
+    transition: background-color 0.2s ease;
+}
+
+.activity-item:last-child {
+    border-bottom: none; /* No border for the last item in a day */
+}
+
+.activity-item:hover {
+     background-color: #fdfaf6; /* Subtle hover effect */
+}
+
+.activity-icon {
+    flex-shrink: 0; /* Prevent icon from shrinking */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1em;
+    color: white;
+    background-color: #adb5bd; /* Default grey icon background */
+}
+
+/* --- Icon Background Colors based on Type --- */
+/* Add more types as needed based on your generator */
+.activity-type-sightseeing .activity-icon { background-color: #007bff; } /* Blue */
+.activity-type-meal .activity-icon { background-color: #fd7e14; } /* Orange */
+.activity-type-travel .activity-icon { background-color: #6f42c1; } /* Purple */
+.activity-type-accommodation .activity-icon { background-color: #28a745; } /* Green */
+.activity-type-leisure .activity-icon { background-color: #17a2b8; } /* Teal */
+.activity-type-shopping .activity-icon { background-color: #e83e8c; } /* Pink */
+.activity-type-event .activity-icon { background-color: #ffc107; } /* Yellow */
+
+.activity-details {
+    flex-grow: 1; /* Allow details to take remaining space */
+}
+
+.activity-time {
+    font-weight: bold;
+    color: var(--secondary-color); /* Use secondary color for time */
+    font-size: 0.9em;
+    margin-bottom: 5px;
+    display: block; /* Put time on its own line */
+}
+
+.activity-description {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.activity-location {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 5px;
+    display: block; /* Own line */
+}
+.activity-location i { /* Style icon within location */
+    margin-right: 5px;
+    color: #777;
+}
+
+
+.activity-notes {
+    font-size: 0.85em;
+    color: #777;
+    font-style: italic;
+    background-color: #f9f9f9;
+    padding: 8px;
+    border-radius: 4px;
+    border-left: 3px solid var(--secondary-color); /* Highlight notes */
+    margin-top: 8px;
+    display: block; /* Own line */
+}
+
+/* Loading/Error Message Styling */
+#itineraryResult .loading-message,
+#itineraryResult .error-message {
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 1.1em;
+    color: #555;
+}
+#itineraryResult .error-message {
+    color: var(--error-color); /* Use your defined error color */
+    font-weight: bold;
+}
+
+/* --- Login Required Popup Styles --- */
+.auth-guard-overlay {
+    position: fixed; /* Stay in place */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Dim background */
+    z-index: 999; /* Ensure it's above most content */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-guard-popup {
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 400px; /* Limit width */
+    z-index: 1000; /* Above overlay */
+    border-top: 5px solid var(--primary-color); /* Accent border */
+}
+
+.auth-guard-popup h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: var(--text-color-dark);
+    font-size: 1.3em;
+}
+
+.auth-guard-popup p {
+    margin-bottom: 20px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.auth-guard-popup .redirect-timer {
+    font-size: 0.9em;
+    color: #888;
+}
+
+/* Optional: Add a simple icon */
+.auth-guard-popup .popup-icon {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    display: block; /* Ensure it takes space */
+}

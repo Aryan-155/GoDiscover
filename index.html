@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoDiscover - Explore India</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" /> <!-- Font Awesome for Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">GoDiscover</a>
+            <nav>
+                <ul id="nav-list"> <!-- Added ID for easier manipulation -->
+                   <li><a href="itinerary.html">Itinerary Planner</a></li>
+                   <li><a href="hotels-restaurants.html">Hotels & Restaurants</a></li>
+                   <li><a href="flights.html">Flights</a></li>
+                   <li><a href="contact.html">Contact</a></li>
+                   <!-- Auth Links - Classes control visibility -->
+                   <li class="auth-link logged-out"><a href="login.html" id="login-btn-header">Login</a></li> <!-- Changed ID slightly -->
+                   <li class="auth-link logged-out"><a href="signup.html" id="signup-btn-header">Sign Up</a></li> <!-- Changed ID slightly -->
+                   <li class="auth-link logged-in" style="display: none;"><span id="user-greeting" style="padding: 8px 10px; color: var(--text-color-dark); font-weight: 600;"></span></li> <!-- Placeholder for user info -->
+                   <li class="auth-link logged-in" style="display: none;"><a href="#" id="logout-btn" class="secondary-btn">Logout</a></li> <!-- Styled logout -->
+               </ul>
+           </nav>
+        </div>
+    </header>
+
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>Discover Incredible India</h1>
+            <p>Your personalized travel guide to explore the wonders of India.</p>
+            <button class="btn primary-btn" id="location-prompt-btn"> <i class="fas fa-map-marker-alt"></i> Enable Location for Nearby Recommendations</button>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Explore GoDiscover Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <i class="fas fa-route"></i>
+                    <h3>Itinerary Planner</h3>
+                    <p>Create personalized travel itineraries tailored to your preferences and dates.</p>
+                    <a href="itinerary.html" class="btn secondary-btn">Plan Your Trip</a>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-hotel"></i><i class="fas fa-utensils"></i>
+                    <h3>Hotels & Restaurants</h3>
+                    <p>Find the best hotels and restaurants near you or in your chosen destination. Real-time recommendations and search.</p>
+                    <a href="hotels-restaurants.html" class="btn secondary-btn">Explore Hotels & Restaurants</a>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-plane"></i>
+                    <h3>Flights & Prices</h3>
+                    <p>Compare flight prices and airlines to find the best deals for your Indian travel destinations. Real-time data.</p>
+                    <a href="flights.html" class="btn secondary-btn">Check Flight Prices</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="about.html">About Us</a>  <!-- You can create a separate about.html page if needed, or keep it in footer -->
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="social-links">
+                <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a> <!-- Using X (Twitter) icon -->
+            </div>
+            <p>© 2023 GoDiscover. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

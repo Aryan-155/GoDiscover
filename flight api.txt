@@ -1,0 +1,4 @@
+curl --request GET \
+	--url 'https://flight-fare-search.p.rapidapi.com/v2/flights/?from=LHR&to=DXB&adult=1&type=economy&currency=USD' \
+	--header 'x-rapidapi-host: flight-fare-search.p.rapidapi.com' \
+	--header 'x-rapidapi-key: 8a046969a7msh33f1ac84eeb67fep1956d7jsn5c1be787a97e'

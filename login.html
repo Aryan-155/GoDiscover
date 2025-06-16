@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - GoDiscover</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">GoDiscover</a>
+            <nav>
+                <ul id="nav-list"> <!-- Added ID for easier manipulation -->
+                    <li><a href="itinerary.html">Itinerary Planner</a></li>
+                    <li><a href="hotels-restaurants.html">Hotels & Restaurants</a></li>
+                    <li><a href="flights.html">Flights</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li class="auth-link logged-out"><a href="login.html" id="login-btn">Login</a></li>
+                    <li class="auth-link logged-out"><a href="signup.html" id="signup-btn">Sign Up</a></li>
+                    <li class="auth-link logged-in" style="display: none;"><span id="user-greeting"></span></li> <!-- Placeholder for user info -->
+                    <li class="auth-link logged-in" style="display: none;"><a href="#" id="logout-btn">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="login-page" class="container auth-page" style="padding-top: 50px; padding-bottom: 50px; min-height: 70vh;">
+        <h2 style="color: var(--text-color-dark); text-align: center; margin-bottom: 30px;">Login to GoDiscover</h2>
+        <form id="loginForm" style="max-width: 450px; margin: 0 auto; padding: 30px; background: #fff; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+            <div id="formMessage" class="form-message" style="display: none;"></div> <!-- Message Area -->
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn primary-btn" style="width: 100%;">Login</button>
+            <p style="text-align: center; margin-top: 20px;">
+                Don't have an account? <a href="signup.html" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">Sign Up</a>
+            </p>
+        </form>
+    </section>
+
+    <footer>
+        <!-- Footer content same as index.html -->
+        <div class="container">
+            <div class="footer-links">
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="social-links">
+                <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+            </div>
+            <p>© 2023 GoDiscover. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

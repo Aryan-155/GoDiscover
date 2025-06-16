@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - GoDiscover</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">GoDiscover</a>
+            <nav>
+                <ul>
+                    <li><a href="itinerary.html">Itinerary Planner</a></li>
+                    <li><a href="hotels-restaurants.html">Hotels & Restaurants</a></li>
+                    <li><a href="flights.html">Flights</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                    <li class="auth-link logged-out"><a href="login.html" id="login-btn">Login</a></li> <!-- Need classes -->
+                    <li class="auth-link logged-out"><a href="signup.html" id="signup-btn">Sign Up</a></li> <!-- Need classes -->
+                    <li class="auth-link logged-in" style="display: none;"><span id="user-greeting"></span></li> <!-- Need class and ID -->
+                    <li class="auth-link logged-in" style="display: none;"><a href="#" id="logout-btn">Logout</a></li> <!-- Need class and ID -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="contact-page" class="contact-page">
+        <div class="container">
+            <h2 style="color: var(--text-color-dark);">Get in Touch</h2>  <!-- Changed header text to "Get in Touch" -->
+            <!-- <p id="help">Have questions or need assistance? Fill out the form below, and we'll get back to you.</p> -->
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject:</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="7" required></textarea>
+                </div>
+                <button type="submit" class="btn primary-btn">Send Message</button>
+            </form>
+            <div id="formMessage" class="form-message"></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="social-links">
+                <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+            </div>
+            <p>© 2023 GoDiscover. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
